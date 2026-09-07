@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIIMS Exams - All India Institute of Medical Sciences, New Delhi</title>
+<style>
+  :root{
+    --navy:#0b1f4d;
+    --navy-dark:#081537;
+    --blue:#4f7de0;
+    --green:#22b573;
+    --purple:#8b5cf6;
+    --red:#d92b2b;
+    --cream:#f4efe4;
+    --text-dark:#1c1c1c;
+    --text-gray:#5a5f6a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: var(--text-dark);
+    background:#fff;
+  }
+  a{ text-decoration:none; color:inherit; }
+  ul{ list-style:none; }
+  img{ max-width:100%; display:block; }
+
+  /* ===== Marquee ===== */
+  .marquee-bar{
+    background:#fdf0c4;
+    border-bottom:1px solid #eadf9e;
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+  }
+  .marquee-track{
+    display:inline-block;
+    padding:12px 0;
+    animation: scroll-left 30s linear infinite;
+  }
+  .marquee-track span{
+    color:#c0392b;
+    font-weight:600;
+    font-size:15px;
+    margin-right:60px;
+  }
+  @keyframes scroll-left{
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
+  }
+
+  /* ===== Header ===== */
+  header.top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 60px;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .brand img{ width:56px; height:56px; }
+  .brand-text{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .brand-text .exams-script{
+    font-family: 'Brush Script MT', cursive;
+    font-size:34px;
+    color:#1c1c1c;
+  }
+  .brand-text .brand-sub{
+    border-left:1px solid #999;
+    padding-left:10px;
+    font-size:12px;
+    line-height:1.3;
+    color:#333;
+    font-weight:600;
+  }
+  .header-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .header-actions button{
+    background:var(--navy);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:10px 20px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .header-actions button.icon-btn{
+    padding:10px 14px;
+  }
+
+  /* ===== Nav ===== */
+  nav.mainnav{
+    background:var(--navy);
+  }
+  nav.mainnav ul{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  nav.mainnav ul li a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    padding:18px 26px;
+    font-size:15px;
+    font-weight:600;
+    transition: background .2s;
+  }
+  nav.mainnav ul li a:hover{
+    background: rgba(255,255,255,.08);
+  }
+  nav.mainnav ul li a .ic{
+    font-size:16px;
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    min-height:560px;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.55) 45%, rgba(255,255,255,.1) 75%),
+      url('https://images.unsplash.com/photo-1580281657702-257584239a55?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    padding:60px;
+  }
+  .hero-inner{
+    max-width:640px;
+  }
+  .hero-seal{
+    width:150px;
+    margin-bottom:24px;
+  }
+  .hero h1{
+    color:#3f6fd6;
+    font-size:56px;
+    font-weight:800;
+    margin-bottom:26px;
+  }
+  .hero p{
+    font-size:24px;
+    font-weight:700;
+    color:#1c1c1c;
+    line-height:1.4;
+    max-width:520px;
+  }
+
+  /* ===== Examination Section ===== */
+  .exam-section{
+    text-align:center;
+    padding:80px 60px 60px;
+  }
+  .exam-section h2{
+    font-size:44px;
+    font-weight:800;
+    margin-bottom:30px;
+  }
+  .exam-section p{
+    max-width:1000px;
+    margin:0 auto;
+    color:var(--text-gray);
+    font-size:18px;
+    line-height:1.8;
+  }
+
+  /* ===== Cards ===== */
+  .cards-row{
+    display:flex;
+    gap:30px;
+    padding:50px 60px 90px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    flex:1 1 340px;
+    max-width:400px;
+    padding:40px 34px;
+    text-align:center;
+  }
+  .card .icon-circle{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    font-size:28px;
+  }
+  .card.blue .icon-circle{ background:#e6edfc; color:var(--blue); }
+  .card.green .icon-circle{ background:#e2f8ee; color:var(--green); }
+  .card.purple .icon-circle{ background:#f1e9fe; color:var(--purple); }
+  .card h3{
+    font-size:26px;
+    font-weight:800;
+    margin-bottom:8px;
+  }
+  .card .subtitle{
+    color:var(--text-gray);
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .card .desc{
+    color:var(--text-gray);
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:22px;
+    min-height:96px;
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-bottom:26px;
+  }
+  .tag{
+    background:#f2f2f4;
+    color:#333;
+    font-size:13px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:20px;
+  }
+  .explore-btn{
+    display:block;
+    width:100%;
+    border:none;
+    border-radius:10px;
+    padding:16px;
+    font-size:16px;
+    font-weight:700;
+    color:#fff;
+    cursor:pointer;
+  }
+  .card.blue .explore-btn{ background:var(--blue); }
+  .card.green .explore-btn{ background:var(--green); }
+  .card.purple .explore-btn{ background:var(--purple); }
+
+  /* ===== Results & Notices ===== */
+  .info-section{
+    background:#f7f8fa;
+    padding:70px 60px;
+  }
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  .info-col h2{
+    font-size:30px;
+    font-weight:800;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .info-col > p{
+    color:var(--text-gray);
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:30px;
+    max-width:520px;
+  }
+  .notice-card{
+    background:#fff;
+    border-left:5px solid var(--blue);
+    border-radius:6px;
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+    padding:22px 26px;
+    margin-bottom:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .notice-card.alert{
+    border-left-color: var(--red);
+  }
+  .notice-card .title{
+    font-size:17px;
+    font-weight:700;
+    color:var(--blue);
+    margin-bottom:10px;
+    line-height:1.4;
+  }
+  .notice-card.alert .title{
+    color: var(--red);
+  }
+  .notice-card .date{
+    color:var(--text-gray);
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .notice-card .action-ic{
+    color:#888;
+    font-size:18px;
+    flex-shrink:0;
+  }
+  .view-all-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#fff;
+    border:2px solid;
+    border-radius:8px;
+    padding:12px 22px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:10px;
+  }
+  .view-all-btn.blue{ color:var(--blue); border-color:var(--blue); }
+  .view-all-btn.red{ color:var(--red); border-color:var(--red); }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--navy-dark);
+    color:#c9cede;
+    padding:70px 60px 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:50px;
+  }
+  .footer-col .seal{
+    width:90px;
+    margin-bottom:20px;
+    filter: brightness(0) invert(1);
+  }
+  .footer-col img.campus{
+    border-radius:8px;
+    margin-bottom:20px;
+  }
+  .footer-col p{
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:24px;
+    color:#aeb4c4;
+  }
+  .play-badge{
+    width:170px;
+    border-radius:6px;
+    border:1px solid #333;
+  }
+  footer h4{
+    color:#fff;
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+  footer h4 .underline{
+    display:block;
+    width:40px;
+    height:3px;
+    background:#3f6fd6;
+    margin-top:8px;
+    border-radius:2px;
+  }
+  footer .links li{
+    margin-bottom:16px;
+    font-size:15px;
+    color:#c9cede;
+  }
+  footer .links li a:hover{ color:#fff; }
+  .contact-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .contact-item .pin{
+    width:38px;
+    height:38px;
+    background:#16255c;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color:#4f7de0;
+  }
+  .contact-item strong{
+    display:block;
+    color:#fff;
+    margin-bottom:6px;
+    font-size:15px;
+  }
+  .contact-item span{
+    font-size:14px;
+    line-height:1.6;
+    color:#aeb4c4;
+  }
+  .footer-bottom{
+    border-top:1px solid #1c2a58;
+    padding:24px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:14px;
+  }
+  .footer-bottom .policy-links{
+    display:flex;
+    gap:26px;
+  }
+  .footer-bottom .policy-links a:hover{ color:#fff; }
+
+  @media (max-width: 900px){
+    header.top{ padding:16px 20px; }
+    nav.mainnav ul li a{ padding:14px 14px; font-size:13px; }
+    .hero{ padding:30px 20px; background-position: right; }
+    .hero h1{ font-size:36px; }
+    .hero p{ font-size:18px; }
+    .exam-section{ padding:50px 20px; }
+    .exam-section h2{ font-size:30px; }
+    .cards-row{ padding:30px 20px 60px; }
+    .info-section{ padding:50px 20px; }
+    .info-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    footer{ padding:50px 20px 0; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Marquee -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>Date Sheet of PG (MD/MS/MDS/Fellowship Programme) Professional Examinations to be held in December 2026</span>
+      <span>Date Sheet of PG (MD/MS/MDS/Fellowship Programme) Professional Examinations to be held in December 2026</span>
+      <span>Programme for the standing lecture series has been released</span>
+      <span>Date Sheet of PG (MD/MS/MDS/Fellowship Programme) Professional Examinations to be held in December 2026</span>
+      <span>Date Sheet of PG (MD/MS/MDS/Fellowship Programme) Professional Examinations to be held in December 2026</span>
+      <span>Programme for the standing lecture series has been released</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="top">
+    <div class="brand">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/All_India_Institute_of_Medical_Sciences_Delhi.svg/240px-All_India_Institute_of_Medical_Sciences_Delhi.svg.png" alt="AIIMS seal">
+      <div class="brand-text">
+        <span class="exams-script">Exams</span>
+        <span class="brand-sub">ALL INDIA INSTITUTE<br>OF MEDICAL SCIENCES<br>New Delhi</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button>About</button>
+      <button class="icon-btn">Tr</button>
+      <button class="icon-btn">&#128100;</button>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="mainnav">
+    <ul>
+      <li><a href="#"><span class="ic">&#8962;</span></a></li>
+      <li><a href="#">Academic Courses</a></li>
+      <li><a href="#">Recruitments</a></li>
+      <li><a href="#">Student</a></li>
+      <li><a href="#">Key Dates</a></li>
+      <li><a href="#">Notices</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-seal" src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/All_India_Institute_of_Medical_Sciences_Delhi.svg/240px-All_India_Institute_of_Medical_Sciences_Delhi.svg.png" alt="AIIMS seal">
+      <h1>AIIMS, New Delhi</h1>
+      <p>Assessment & Examination Registration Portal - Upholding Excellence in Medical Education.</p>
+    </div>
+  </section>
+
+  <!-- Examination Section -->
+  <section class="exam-section">
+    <h2>Examination Section</h2>
+    <p>The Examination Section at AIIMS New Delhi is a vital pillar of the institute's academic framework, ensuring smooth, secure, and transparent conduct of examinations. From scheduling and paper preparation to result processing, it upholds the highest standards of integrity and fairness. Through its commitment to excellence and regulatory compliance, the Section plays a key role in advancing AIIMS's mission of education, research, and patient care.</p>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards-row">
+    <div class="card blue">
+      <div class="icon-circle">&#127891;</div>
+      <h3>Academic Courses</h3>
+      <div class="subtitle">Academic Courses</div>
+      <div class="desc">Apply for entrance examinations to various AIIMS academic programs including MBBS, BSc Nursing, MSc, MOS and other healthcare-related disciplines.</div>
+      <div class="tags">
+        <span class="tag">Medicine</span>
+        <span class="tag">Dentistry</span>
+        <span class="tag">Nursing</span>
+        <span class="tag">Biotechnology</span>
+        <span class="tag">Paramedical</span>
+      </div>
+      <button class="explore-btn">Explore Now &rsaquo;</button>
+    </div>
+
+    <div class="card green">
+      <div class="icon-circle">&#128188;</div>
+      <h3>Recruitments</h3>
+      <div class="subtitle">Recruitments</div>
+      <div class="desc">Apply for AIIMS recruitment exams including NORCET, faculty posts, research positions and other central recruitment opportunities.</div>
+      <div class="tags">
+        <span class="tag">CRE</span>
+        <span class="tag">APS</span>
+        <span class="tag">SR/SD</span>
+        <span class="tag">Faculty Recruitment</span>
+        <span class="tag">NORCET</span>
+        <span class="tag">ICMR</span>
+        <span class="tag">REGA</span>
+        <span class="tag">JR</span>
+      </div>
+      <button class="explore-btn">Explore Now &rsaquo;</button>
+    </div>
+
+    <div class="card purple">
+      <div class="icon-circle">&#128101;</div>
+      <h3>Student</h3>
+      <div class="subtitle">Student (Professional Examinations)</div>
+      <div class="desc">Register for professional examinations for AIIMS students enrolled in UG, PG, super-specialty, and doctoral courses.</div>
+      <div class="tags">
+        <span class="tag">Undergraduate</span>
+        <span class="tag">Super-specialization</span>
+        <span class="tag">Postgraduate</span>
+        <span class="tag">Doctoral</span>
+      </div>
+      <button class="explore-btn">Explore Now &rsaquo;</button>
+    </div>
+  </section>
+
+  <!-- Results & Notices -->
+  <section class="info-section">
+    <div class="info-grid">
+      <div class="info-col">
+        <h2>&#127942; Results & Announcements</h2>
+        <p>Access your examination results, application status, and download official certificates from our secure portal.</p>
+
+        <div class="notice-card">
+          <div>
+            <div class="title">Ph.D. Thesis Public Defence Ms. Dipika Sharma, Department of Biophysics</div>
+            <div class="date">&#128197; Published: 3 September 2026</div>
+          </div>
+          <div class="action-ic">&#8595;</div>
+        </div>
+
+        <div class="notice-card">
+          <div>
+            <div class="title">Result: B.Sc. (Hons.) Nursing Phase-II (Supple.) Professional Examination – August 2026</div>
+            <div class="date">&#128197; Published: 3 September 2026</div>
+          </div>
+          <div class="action-ic">&#8595;</div>
+        </div>
+
+        <div class="notice-card">
+          <div>
+            <div class="title">Ph.D. Thesis Public Defence Ms. Ridhima Goel, Department of Medical Oncology</div>
+            <div class="date">&#128197; Published: 31 August 2026</div>
+          </div>
+          <div class="action-ic">&#8595;</div>
+        </div>
+
+        <div class="notice-card">
+          <div>
+            <div class="title">Result: B.Sc. (Hons.) Nursing Phase-IV (Supple.) Professional Examination – August 2026</div>
+            <div class="date">&#128197; Published: 31 August 2026</div>
+          </div>
+          <div class="action-ic">&#8595;</div>
+        </div>
+
+        <button class="view-all-btn blue">View All Results &rsaquo;</button>
+      </div>
+
+      <div class="info-col">
+        <h2>&#128276; Important Notices</h2>
+        <p>Stay updated with the latest announcements, deadlines, and important information regarding registrations.</p>
+
+        <div class="notice-card alert">
+          <div>
+            <div class="title">Date Sheet of PG (MD/MS/MDS/Fellowship Programme) Professional Examinations to be held in December 2026</div>
+            <div class="date">&#128197; Published: 5 September 2026</div>
+          </div>
+          <div class="action-ic">&#128276;</div>
+        </div>
+
+        <div class="notice-card alert">
+          <div>
+            <div class="title">Date Sheet of PG (MD/MS/MDS/Fellowship Programme) Professional Examinations to be held in December 2026</div>
+            <div class="date">&#128197; Published: 5 September 2026</div>
+          </div>
+          <div class="action-ic">&#128276;</div>
+        </div>
+
+        <div class="notice-card alert">
+          <div>
+            <div class="title">Notice No.146/2026: Re-conduct of CRE-5 Examination at ION Digital Zone IDZ Sitapura, Jaipur (RJ0101/RJ0102) on 7 September, 2026</div>
+            <div class="date">&#128197; Published: 31 August 2026</div>
+          </div>
+          <div class="action-ic">&#128276;</div>
+        </div>
+
+        <div class="notice-card alert">
+          <div>
+            <div class="title">Addendum No. 37/2026 regarding addition of AIIMS Rishikesh vacancy</div>
+            <div class="date">&#128197; Published: 31 August 2026</div>
+          </div>
+          <div class="action-ic">&#128276;</div>
+        </div>
+
+        <button class="view-all-btn red">View All Notices &rsaquo;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img class="seal" src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/All_India_Institute_of_Medical_Sciences_Delhi.svg/240px-All_India_Institute_of_Medical_Sciences_Delhi.svg.png" alt="AIIMS seal">
+        <img class="campus" src="https://images.unsplash.com/photo-1580281657702-257584239a55?q=80&w=800&auto=format&fit=crop" alt="AIIMS Campus">
+        <p>Assessment & Examination Registration Portal, Upholding Excellence in Medical Education.</p>
+        <img class="play-badge" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links<span class="underline"></span></h4>
+        <ul class="links">
+          <li><a href="#">AIIMS, New Delhi - Institute Main Portal</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Academic Courses</a></li>
+          <li><a href="#">Recruitments</a></li>
+          <li><a href="#">Key Dates</a></li>
+          <li><a href="#">Notices</a></li>
+          <li><a href="#">Miscellaneous Notice</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact<span class="underline"></span></h4>
+        <div class="contact-item">
+          <div class="pin">&#128205;</div>
+          <div>
+            <strong>Address</strong>
+            <span>1st Floor, Convergence Block, Sri Aurobindo Marg, Ansari Nagar, AIIMS, New Delhi 110029</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Copyright @ All India Institute of Medical Sciences, New Delhi. All rights Reserved</div>
+      <div class="policy-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund & Cancellation Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
