@@ -123,27 +123,24 @@
     <div class="brand">
           <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=100&h=100&fit=crop" alt="College Logo" style="border-radius: 50%; object-fit: cover;">
           <div class="brand-text">
-        <span class="exams-script">Exams</span>
-        <span class="brand-sub">SRINATH UNIVERSITY<br>JAMSHEDPUR<br>Jharkhand</span>
-      </div>
+                  <span class="brand-sub">SRINATH UNIVERSITY<br>JAMSHEDPUR<br>Jharkhand</span>
+                </div>
     </div>
     <div class="header-actions"><button>About</button></div>
   </header>
 
   <nav class="mainnav">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Academic Courses</a></li>
-      <li><a href="#">Recruitments</a></li>
-      <li><a href="#">Student</a></li>
-      <li><a href="#">Key Dates</a></li>
-      <li><a href="#">Notices</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Support</a></li>
-    </ul>
-  </nav>
+      <ul>
+        <li><a href="#home" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="#courses" onclick="showPage('courses'); return false;">Academic Courses</a></li>
+        <li><a href="#recruitments" onclick="showPage('recruitments'); return false;">Recruitments</a></li>
+        <li><a href="#student" onclick="showPage('student'); return false;">Student</a></li>
+        <li><a href="#notices" onclick="showPage('notices'); return false;">Notices</a></li>
+      </ul>
+    </nav>
 
-  <section class="hero">
+    <div id="home" class="page">
+    <section class="hero">
       <div class="hero-inner">
         <img class="hero-seal" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=150&h=150&fit=crop" alt="College Logo" style="border-radius: 50%; object-fit: cover;">
         <h1>Srinath University</h1>
@@ -151,10 +148,7 @@
     </div>
   </section>
 
-  <section class="exam-section">
-    <h2>Examination Section</h2>
-    <p>The Examination Section at Srinath University Jamshedpur ensures smooth, secure, and transparent conduct of examinations, upholding the highest standards of integrity and fairness in advancing the university's mission of education, research, and community service.</p>
-  </section>
+  
 
   <section class="cards-row">
     <div class="card blue">
@@ -168,34 +162,34 @@
         <span class="tag">Law</span>
         <span class="tag">Science</span>
       </div>
-      <button class="explore-btn">Explore Now &rsaquo;</button>
-    </div>
+      <button class="explore-btn" onclick="showPage('courses')">Explore Now &rsaquo;</button>
+          </div>
 
-    <div class="card green">
-      <div class="icon-circle">&#128188;</div>
-      <h3>Recruitments</h3>
-      <div class="subtitle">Recruitments</div>
-      <div class="desc">Apply for Srinath University recruitment including faculty posts, research positions, and non-teaching staff.</div>
-      <div class="tags">
-        <span class="tag">Faculty Recruitment</span>
-        <span class="tag">Non-Teaching</span>
-        <span class="tag">Research</span>
-      </div>
-      <button class="explore-btn">Explore Now &rsaquo;</button>
-    </div>
+          <div class="card green">
+            <div class="icon-circle">&#128188;</div>
+            <h3>Recruitments</h3>
+            <div class="subtitle">Recruitments</div>
+            <div class="desc">Apply for Srinath University recruitment including faculty posts, research positions, and non-teaching staff.</div>
+            <div class="tags">
+              <span class="tag">Faculty Recruitment</span>
+              <span class="tag">Non-Teaching</span>
+              <span class="tag">Research</span>
+            </div>
+            <button class="explore-btn" onclick="showPage('recruitments')">Explore Now &rsaquo;</button>
+          </div>
 
-    <div class="card purple">
-      <div class="icon-circle">&#128101;</div>
-      <h3>Student</h3>
-      <div class="subtitle">Student (Professional Examinations)</div>
-      <div class="desc">Register for professional examinations for Srinath University students enrolled in UG and PG courses.</div>
-      <div class="tags">
-        <span class="tag">Undergraduate</span>
-        <span class="tag">Postgraduate</span>
-      </div>
-      <button class="explore-btn">Explore Now &rsaquo;</button>
-    </div>
-  </section>
+          <div class="card purple">
+            <div class="icon-circle">&#128101;</div>
+            <h3>Student</h3>
+            <div class="subtitle">Student (Professional Examinations)</div>
+            <div class="desc">Register for professional examinations for Srinath University students enrolled in UG and PG courses.</div>
+            <div class="tags">
+              <span class="tag">Undergraduate</span>
+              <span class="tag">Postgraduate</span>
+            </div>
+            <button class="explore-btn" onclick="showPage('student')">Explore Now &rsaquo;</button>
+          </div>
+        </section>
 
   <section class="info-section">
     <div class="info-grid">
@@ -219,10 +213,10 @@
           <div class="action-ic">&#8595;</div>
         </div>
 
-        <button class="view-all-btn blue">View All Results &rsaquo;</button>
-      </div>
+        <button class="view-all-btn blue" onclick="showPage('notices')">View All Results &rsaquo;</button>
+              </div>
 
-      <div class="info-col">
+              <div class="info-col">
         <h2>&#128276; Important Notices</h2>
         <p>Stay updated with the latest announcements and deadlines regarding registrations.</p>
 
@@ -242,28 +236,122 @@
           <div class="action-ic">&#128276;</div>
         </div>
 
-        <button class="view-all-btn red">View All Notices &rsaquo;</button>
-      </div>
-    </div>
-  </section>
+        <button class="view-all-btn red" onclick="showPage('notices')">View All Notices &rsaquo;</button>
+              </div>
+            </div>
+          </section>
+          </div> <!-- End Home Page -->
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-              <img class="seal" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=100&h=100&fit=crop" alt="College Logo" style="border-radius: 50%; object-fit: cover;">
-              <p>Assessment & Examination Registration Portal, Upholding Excellence in Higher Education.</p>
-      </div>
+          <!-- Courses Page -->
+          <div id="courses" class="page" style="display:none;">
+            <section class="info-section" style="min-height: 50vh;">
+              <div class="info-grid" style="grid-template-columns: 1fr;">
+                <div class="info-col">
+                  <h2>&#127891; Academic Courses</h2>
+                  <p>Explore our wide range of undergraduate and postgraduate programs.</p>
+                  <div class="notice-card">
+                    <div>
+                      <div class="title">BCA (Bachelor of Computer Applications) - Specialization in AI & ML</div>
+                      <div class="date">Duration: 3 Years | Department: Computer Science</div>
+                    </div>
+                  </div>
+                  <div class="notice-card">
+                    <div>
+                      <div class="title">B.Tech in Artificial Intelligence</div>
+                      <div class="date">Duration: 4 Years | Eligibility: 10+2 with PCM</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
 
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul class="links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Academic Courses</a></li>
-          <li><a href="#">Recruitments</a></li>
-          <li><a href="#">Notices</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>
+          <!-- Recruitments Page -->
+          <div id="recruitments" class="page" style="display:none;">
+            <section class="info-section" style="min-height: 50vh;">
+              <div class="info-grid" style="grid-template-columns: 1fr;">
+                <div class="info-col">
+                  <h2>&#128188; Recruitments</h2>
+                  <p>Join our esteemed faculty and staff.</p>
+                  <div class="notice-card alert">
+                    <div>
+                      <div class="title">Assistant Professor - Computer Science</div>
+                      <div class="date">Deadline: 20 September 2026</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Student Portal Page -->
+          <div id="student" class="page" style="display:none;">
+            <section class="info-section" style="min-height: 50vh;">
+              <div class="info-grid" style="grid-template-columns: 1fr;">
+                <div class="info-col">
+                  <h2>&#128101; Student Portal</h2>
+                  <p>Manage your academic journey.</p>
+                  <div class="notice-card">
+                    <div>
+                      <div class="title">Semester Registration Open</div>
+                      <div class="date">Register for the upcoming semester by 15 October 2026</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Notices Page -->
+          <div id="notices" class="page" style="display:none;">
+            <section class="info-section" style="min-height: 50vh;">
+              <div class="info-grid" style="grid-template-columns: 1fr;">
+                <div class="info-col">
+                  <h2>&#128276; All Notices</h2>
+                  <p>Official university announcements.</p>
+                  <div class="notice-card alert">
+                    <div>
+                      <div class="title">Holiday Announcement - Diwali</div>
+                      <div class="date">Campus will remain closed from 8 Nov to 12 Nov 2026</div>
+                    </div>
+                  </div>
+                  <div class="notice-card alert">
+                    <div>
+                      <div class="title">Date Sheet for End Semester (UG/PG) Examinations to be held in December 2026</div>
+                      <div class="date">&#128197; Published: 5 September 2026</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <script>
+            function showPage(pageId) {
+              const pages = document.querySelectorAll('.page');
+              pages.forEach(p => p.style.display = 'none');
+              document.getElementById(pageId).style.display = 'block';
+              window.scrollTo(0, 0);
+            }
+          </script>
+
+          <footer>
+            <div class="footer-grid">
+              <div class="footer-col">
+                <img class="seal" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=100&h=100&fit=crop" alt="College Logo" style="border-radius: 50%; object-fit: cover;">
+                <p>Assessment & Examination Registration Portal, Upholding Excellence in Higher Education.</p>
+              </div>
+
+              <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="links">
+                  <li><a href="#home" onclick="showPage('home'); return false;">Home</a></li>
+                  <li><a href="#courses" onclick="showPage('courses'); return false;">Academic Courses</a></li>
+                  <li><a href="#recruitments" onclick="showPage('recruitments'); return false;">Recruitments</a></li>
+                  <li><a href="#student" onclick="showPage('student'); return false;">Student</a></li>
+                  <li><a href="#notices" onclick="showPage('notices'); return false;">Notices</a></li>
+                </ul>
+              </div>
 
       <div class="footer-col">
         <h4>Contact</h4>
